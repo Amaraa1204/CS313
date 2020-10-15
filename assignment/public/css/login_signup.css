@@ -1,0 +1,27 @@
+.head{
+	width:240px; 
+	border: solid 1px #333333; 
+	margin:10%;
+	margin-left: 500px;
+	background-color: #E29172;  
+	float: left;
+}
+.head1{
+	background-color:#E86C3E; 
+	color:#FFFFFF; 
+	padding:3px;
+}
+.button{
+  background-color: #F86C21;
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    border: none;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+.button:hover{
+  color: black;
+  background: #F1E5DE;
+}
