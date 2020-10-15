@@ -1,6 +1,6 @@
 body{
   z-index:2;
-  background-image: url("images/background.jpg");
+  background-image: url("images/wallhaven.jpg");
   background-size: 1500px 1300px;
   color: white;
   font-family: 'Indie Flower', cursive;
@@ -15,7 +15,7 @@ h1 { font-size: 60px;
 .navbar {
   z-index:1;
   overflow: hidden;
-  background-color: #114d63
+  background-color: #BC69FD
 ;	
   position: fixed;
   top: 0;
@@ -70,10 +70,10 @@ h1 { font-size: 60px;
   height: 100px; 
   left: 0px;
   bottom: 0;
-  background-color: #1D556A;
+  background-color: #BC69FD;
  }
 .notification {
-  background-color: #5DBCD2;
+  background-color: #D9BFDA;
   color: white;
   text-decoration: none;
   padding: 15px 26px;
@@ -94,7 +94,7 @@ h1 { font-size: 60px;
   right: -10px;
   padding: 5px 10px;
   border-radius: 30%;
-  background: #396C7B;
+  background: #BC69FD;
   color: white;
 }
 
@@ -108,7 +108,7 @@ h1 { font-size: 60px;
 }
 .dropdown-content a
 {
-  background-color: #1D88BE;
+  background-color: #BC69FD;
   color: black;
   height: 50px;
   margin-left: -26px;
@@ -121,6 +121,6 @@ h1 { font-size: 60px;
 }
 .dropdown-content a:hover
 {
-  background-color: #d9f1fa;;
+  background-color: #D9BFDA;
   color: black;
 }

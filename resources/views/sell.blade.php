@@ -42,15 +42,10 @@
             <div style = "margin: 30px; width: 1100px;">
               	<form action="/publish" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                  	<div style="text-align: left; margin-left: 50px; display: table-cell;">Бүтээгдэхүүний нэр:<br>
+                  	<div style="text-align: left; margin-left: 50px; display: table-cell;">Хувцасны нэр:<br>
                   	<input type="text" name="name"><br>
-                  	Бүтээгдэхүүний төрөл: <br>
-                  	<input type="radio" name="type" value="clothes">Clothes, shoes<br>
-                  	<input type="radio" name="type" value="instruments">Musical instruments<br>
-                  	<input type="radio" name="type" value="art">Paintings, arts<br>
-                  	<input type="radio" name="type" value="elec">Electronics<br>
-                  	<input type="radio" name="type" value="Jewelery">Accessory, jeweleries<br>
-                  	<input type="radio" name="type" value="fur">Furnitures<br>
+                  	Хувцасны төрөл: <br>
+                  	<input type="radio" name="type" value="clothes">ХЙХЙ<br>
                     <input type="radio" name="type" value="dif">Өөр төрөл<br>
                     <input type="text" name="addType" hint="Төрлөө бичих"><br>
                     </div>
@@ -75,7 +70,7 @@
                             @enderror
                         </div>
                     </div>
-                  	Барааг аль төрлөөр тавьж байгаа вэ?<br>
+                  	Хувцсаа аль төрлөөр тавьж байгаа вэ?<br>
                   	<input type="radio" name="usertype" value="dealer">Зуучлагч<br>
                   	<input type="radio" name="usertype" value="owner">Эзэмшигч<br>
                   	<input type="submit" value="Байршуулах" name="submit" class="button"></div>
@@ -83,9 +78,9 @@
             </div>
          </div>
       </div>
-<footer id="footer" align="center">
+<!--<footer id="footer" align="center">
   <h3>Thrift shop</h3>
-  <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  
+  <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  -->
 </footer>
 </body>
 </html>

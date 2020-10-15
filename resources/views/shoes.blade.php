@@ -61,9 +61,9 @@
 
 
 </div>
-<footer id="footer" align="center">
+<!--<footer id="footer" align="center">
   <h3>Thrift shop</h3>
-  <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  
+  <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  -->
 </footer>
 </body>
 </html>

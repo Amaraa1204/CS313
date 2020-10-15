@@ -34,9 +34,9 @@
 			Энэ бол та өөрт хэрэгцээгүй бараагаа зарах эсвэл өөрийн<br> хэрэгцээтэй зүйлсийг хямд үнээр олж авах орон зай юм.
 		</blockquote>
 	</div>
-<footer id="footer" align="center" style="bottom: 0;">
+<!--<footer id="footer" align="center" style="bottom: 0;">
   <h3>Thrift shop</h3>
-  <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  
+  <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  -->
 </footer>
 </body>
 </html>

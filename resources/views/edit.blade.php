@@ -132,10 +132,10 @@
     </div>
   </div>
 </div>
-<footer id="footer" align="center" style=" position: relative; margin-top: 1000px">
+<!--<footer id="footer" align="center" style=" position: relative; margin-top: 1000px">
   <h3>Thrift shop</h3>
   <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  
-</footer>
+</footer>-->
 </body>
 </html>
 
