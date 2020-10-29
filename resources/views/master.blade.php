@@ -18,12 +18,18 @@
     @auth
     <a href="http://localhost:8000/shop" class="menuOptions">Shop</a>
     <a href="http://localhost:8000/sell" class="menuOptions">Sell</a>
+    <form>
+        <input type="text" id="search-bar" class="menuOptions" name="search" placeholder="Search..">
+    </form>
     <a href="http://localhost:8000/profile" class="userReg">Profile</a>
      <a class="userReg" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
     @else
+    <form>
+        <input type="text" id="search-bar" name="search" placeholder="Search..">
+    </form>
     <a href="http://localhost:8000/login" class="userReg">Sign in</a>
     <a href="http://localhost:8000/register" class="userReg">Register</a>
     @endauth
