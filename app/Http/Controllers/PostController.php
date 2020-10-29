@@ -55,6 +55,8 @@ class PostController extends Controller
             $photo = $request->file('photo');
         $new_name = rand() . '.' . $photo->getClientOriginalExtension();
         $photo->move(public_path("itemImages"), $new_name);
+        #store('public/'.$new_name);
+        #
         }else{
             return 'No files found';
         }
@@ -75,7 +77,6 @@ class PostController extends Controller
             'price' => $_POST['price'],
             'description' => $_POST['def'],
             'photo' => $new_name,
-            'owner_type' => $_POST['usertype']
         ]);
         return view('home');
     }

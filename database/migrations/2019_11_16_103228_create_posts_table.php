@@ -22,7 +22,6 @@ class CreatePostsTable extends Migration
             $table->string('price');
             $table->string('description');
             $table->string('photo')->default('photo.jpg');
-            $table->string('owner_type');
         });
     }
 

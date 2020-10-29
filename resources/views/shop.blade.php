@@ -34,7 +34,7 @@
   function rand_color() {
     return sprintf('#%06X', mt_rand(0, 0xFFFFFF));
   }
-  $types=Posts::all()->distinct('type');
+  $types=Posts::distinct('type')->get();
   $types->each(function($type){
     $t = $type->type;
       $path='"window.location.href='."'"."http://localhost:8000/shop/".$t."'".';"';

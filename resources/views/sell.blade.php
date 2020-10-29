@@ -45,7 +45,7 @@
                   	<div style="text-align: left; margin-left: 50px; display: table-cell;">Хувцасны нэр:<br>
                   	<input type="text" name="name"><br>
                   	Хувцасны төрөл: <br>
-                  	<input type="radio" name="type" value="clothes">ХЙХЙ<br>
+                  	<input type="radio" name="type" value="shirt">Shirt<br>
                     <input type="radio" name="type" value="dif">Өөр төрөл<br>
                     <input type="text" name="addType" hint="Төрлөө бичих"><br>
                     </div>
@@ -70,9 +70,6 @@
                             @enderror
                         </div>
                     </div>
-                  	Хувцсаа аль төрлөөр тавьж байгаа вэ?<br>
-                  	<input type="radio" name="usertype" value="dealer">Зуучлагч<br>
-                  	<input type="radio" name="usertype" value="owner">Эзэмшигч<br>
                   	<input type="submit" value="Байршуулах" name="submit" class="button"></div>
               	</form>
             </div>
