@@ -3,7 +3,7 @@
 <head>
     <title>Thirft Shop Mongolia</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('home.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('login_signup.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('sell.css') }}">
     <script src="{{ asset('click.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <meta charset="utf8">
@@ -37,28 +37,23 @@
 </div><br>
 
 <div align = "center" class="div" >
-         <div class="head" style="width: 1100px; margin-left: 20px;">
-            <div class="head1" style="width: 1093px;"><b>Зарах</b></div>
-            <div style = "margin: 30px; width: 1100px;">
+         <div class="head">
+            <div class="head1"><b>Зарах</b></div>
               	<form action="/publish" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                  	<div style="text-align: left; margin-left: 50px; display: table-cell;">Хувцасны нэр:<br>
+                  	Хувцасны нэр:<br>
                   	<input type="text" name="name"><br>
                   	Хувцасны төрөл: <br>
                   	<input type="radio" name="type" value="shirt">Shirt<br>
                     <input type="radio" name="type" value="dif">Өөр төрөл<br>
                     <input type="text" name="addType" hint="Төрлөө бичих"><br>
-                    </div>
-                  	<div style="text-align: center; margin-right: 500px; display: table-cell;" >Ашигласан хугацаа(сар):<br>
+                    Ашигласан хугацаа(сар):<br>
                   	<input type="number" name="time"><br>
                   	Үнэ(төгрөг):<br>
                   	<input type="number" name="price"><br>
                   	Тайлбар:<br>
                   	<input type="text" name="def" style="height: 100px"><br>
-                  </div>
-                  	<div style="text-align: right; margin-right: 100px; display: table-cell;">Зураг:<br><br>
-
-                    <div class="form-group row">
+                  	Зураг:<br><br>
                         <label class="button" for="photo">Choose file</label>
                         <div class="col-md-6">
                             <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" required autocomplete="photo" id="upload-photo" style="opacity: 0;" multiple>
@@ -69,10 +64,9 @@
                                 </span>
                             @enderror
                         </div>
-                    </div>
+                    
                   	<input type="submit" value="Байршуулах" name="submit" class="button"></div>
               	</form>
-            </div>
          </div>
       </div>
 <!--<footer id="footer" align="center">

@@ -1,0 +1,48 @@
+.head{
+	width:1100px; 
+	border: solid 1px #333333; 
+	margin-top: 150px;
+	margin-left: 100px;
+  margin-bottom: 50px;
+	background-color: #D9BFDA;  
+	float: left;
+  position: absolute;
+  padding-bottom: 20px;
+}
+.head1{
+	background-color:#BC69FD; 
+	color:#FFFFFF; 
+	padding:3px;
+}
+.button{
+  background-color: #BC69FD;
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    border: none;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+.button:hover{
+  color: black;
+  background: #d9f1fa;
+}
+
+.div input{
+  width: 90%;
+  border-radius: 30px;
+  border: none;
+}
+
+.div input[radio]{
+  float: left;
+}
+
+.div form {
+  padding: 5%;
+}
+
+.div{
+  text-align: left;
+}

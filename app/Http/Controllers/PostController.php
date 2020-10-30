@@ -81,6 +81,7 @@ class PostController extends Controller
         return view('home');
     }
 
+
     /**
      * Display the specified resource.
      *

@@ -51,7 +51,7 @@
     <img src="'.$photo.'">
     <div style="float: left; margin-left: 30px;"><h2>Нэр:</h2>
     <blockquote>'.$post->name.'</blockquote></div>
-    <button onclick="window.location.href='.$path.';"style="background-color: #5DBCD2; margin-right: 30px; ">Дэлгэрэнгүй
+    <button onclick="window.location.href='.$path.';"style="background-color: #BC69FD; margin-right: 30px; ">Дэлгэрэнгүй
     </button>
 
     <div style="float: right; margin-left: 30px;"><h2>Нийтэлсэн:</h2>

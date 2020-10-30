@@ -65,6 +65,8 @@
     <blockquote>{{$post->price}}</blockquote>
     <h3>Нэмэлт тайлбар:</h3>
     <blockquote>{{$post->description}}</blockquote>
+    <h3>Төрөл:</h3>
+    <blockquote>{{$post->type}}</blockquote>
   </div>
   <div style="float: right; margin-right: 280px">
     <h3>Seller Name:</h3>

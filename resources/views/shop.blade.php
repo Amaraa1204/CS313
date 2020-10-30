@@ -4,6 +4,7 @@
     <title>Thirft Shop Mongolia</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('home.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('shop.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('itemList.css') }}">
     <script src="{{ asset('click.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <meta charset="utf8">
@@ -28,18 +29,25 @@
 
 
   <h1 class="headText" style="margin-top: 10%; margin-left: 35%;">Happy SHOPPING!</h1>
-<div align="center" style=" margin-top: 80px;"><--!-->
+<div align="center" style=" margin-top: 80px;">
   <?php  
   use App\Posts;
-  function rand_color() {
-    return sprintf('#%06X', mt_rand(0, 0xFFFFFF));
+  $posts = Posts::all();
+  foreach ($posts as $post) {
+    //echo $post;
+    $post->photo;
+    $photo = "background:url(http://localhost:8000/itemImages/".$post->photo.");";
+    $path = "'http://localhost:8000/shop/a/".$post->id."'";
+    //echo $photo;
+    //echo "<br><br>";
+
+    echo '<button class="item" style="'.$photo.' position: center; background-size: cover;" onclick="window.location.href='.$path.';">
+      <br><br><br><br><br><br><br><br><br>
+      '.$post->owner_name.'<br>
+      '.$post->name.'<br>
+      '.$post->price.'<br> 
+  </button>';
   }
-  $types=Posts::distinct('type')->get();
-  $types->each(function($type){
-    $t = $type->type;
-      $path='"window.location.href='."'"."http://localhost:8000/shop/".$t."'".';"';
-    echo '<button class="items" style="background-color:'.rand_color().'; position: center; background-size: cover;" onclick='.$path.'>'.$t.'</button>';
-  });
   ?>
 </div>
 <!--<footer id="footer" align="center">
