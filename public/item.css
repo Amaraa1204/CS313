@@ -14,8 +14,9 @@
   margin-left: 100px;
 }
 .container{
-  margin-top: 80px;
-
+  min-height: 100%;
+    margin-bottom: -100px;
+    padding-bottom: 100px;
 }
 .definition .btn-group{  
   display: inline;

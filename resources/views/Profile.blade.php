@@ -13,7 +13,6 @@
   height: 100px; 
   left: 0px;
   bottom: 0;
-  background-color: #1D556A;
  }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
@@ -73,9 +72,9 @@
 </div>
 </div>
  
-<!--<footer id="footer" align="center">
+<footer id="footer">
   <h3>Thrift shop</h3>
-  <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  -->
+  <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>
 </footer>
 </body>
 </html>

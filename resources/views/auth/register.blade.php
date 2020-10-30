@@ -149,12 +149,13 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 <footer id="footer" align="center">
   <h3>Thrift shop</h3>
   <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  

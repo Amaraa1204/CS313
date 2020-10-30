@@ -30,12 +30,20 @@
     @auth
     <a href="http://localhost:8000/shop" class="menuOptions">Shop</a>
     <a href="http://localhost:8000/sell" class="menuOptions">Sell</a>
+    
+    <form>
+        <input type="text" id="search-bar" name="search" placeholder="Search..">
+    </form>
     <a href="http://localhost:8000/profile" class="userReg">Profile</a>
      <a class="userReg" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
     @else
+    
+    <form>
+        <input type="text" id="search-bar" name="search" placeholder="Search..">
+    </form>
     <a href="http://localhost:8000/login" class="userReg">Sign in</a>
     <a href="http://localhost:8000/register" class="userReg">Register</a>
     @endauth
@@ -81,7 +89,7 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <input style="width" class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
