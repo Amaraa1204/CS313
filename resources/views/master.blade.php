@@ -31,7 +31,7 @@
         <input type="text" id="search-bar" name="search" placeholder="Search..">
     </form>
     <a href="http://localhost:8000/login" class="userReg">Sign in</a>
-    <a href="http://localhost:8000/register" class="userReg">Register</a>
+    <a href="http://localhost:8000/login" class="userReg">Register</a>
     @endauth
 </div><br>
     
