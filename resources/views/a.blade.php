@@ -54,7 +54,13 @@
   <div class="img">
     <img height="500px" src={{$photo}}>
   </div>
-  <div class="imgDef" style="font-size: 17px; float: left;margin-left:280px ">
+  <div style="float: left; margin-right: 280px">
+    <h3>Seller Name:</h3>
+    <blockquote>{{$seller->user_name}}</blockquote>
+    <h3>Seller email:</h3>
+    <blockquote>{{$seller->email}}</blockquote>
+  </div>
+  <div class="imgDef" style="font-size: 17px; float: right; margin-left:280px ">
     <h3>Name:</h3>
     <blockquote>{{$post->owner_name}}</blockquote>
     <h3>Product name:</h3>
@@ -65,16 +71,16 @@
     <blockquote>{{$post->price}}</blockquote>
     <h3>Нэмэлт тайлбар:</h3>
     <blockquote>{{$post->description}}</blockquote>
-    <h3>Төрөл:</h3>
-    <blockquote>{{$post->type}}</blockquote>
   </div>
-  <div style="float: right; margin-right: 280px">
-    <h3>Seller Name:</h3>
-    <blockquote>{{$seller->user_name}}</blockquote>
-    <h3>Seller email:</h3>
-    <blockquote>{{$seller->email}}</blockquote>
-  </div>
+  <form action="/bid" method="post" enctype="multipart/form-data">
+    Санал болгох үнэ: <input type='number' name='bid'><br>
+    <button>Болих</button>
+    <button>Үнийн санал илгээх</button>
+    <button>Холбогдох</button>
+    <button>Худалдаж авах</button>
+  </form>
 </div>
+
 <!--<footer id="footer" align="center">
   <h3>Thrift shop</h3>
   <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  
