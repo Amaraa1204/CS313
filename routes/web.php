@@ -19,12 +19,6 @@ Route::get('/sell', function(){
 Route::resource('/profile', 'UserController');
 Route::resource('/profile/{id}/edit', 'ProfileController');
 
-Route::get('/register', function(){
-	return view('register');
-});
-Route::get('/login', function(){
-	return view('login');
-});
 
 Auth::routes();
 
@@ -32,8 +26,6 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 
 //Route::resource('/sell','PostController');
-
-
 
 
 Route::get('/create', 'PostController@create');
