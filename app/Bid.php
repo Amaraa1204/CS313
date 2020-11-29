@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Posts extends Model
+class Bid extends Model
 {
     protected $fillable = [
-    	'owner_id', 'name', 'type', 'time', 'price', 'description', 'photo'
+    	'user_id', "post_id", 'amount', 'state'
     ];
     public $timestamps = false;
 }

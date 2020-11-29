@@ -39,13 +39,19 @@
 
 <?php  
   use App\Posts;
-  use App\User;
+  use App\user;
 
   $post=Posts::where('id',$itemID)->first();
   $photo = "http://localhost:8000/itemImages/".$post->photo."";
-
-  $seller=User::where('user_name',$post->owner_name)->first();
-
+  if (user::where('id', $post->owner_id)->first()==null){
+    $seller_name = "User not found";
+    $seller_email = " ";
+  }
+  else{
+    $user = user::where('id', $post->owner_id)->first();
+    $seller_name = $user->user_name;
+    $seller_email = $user->email;
+  }
 
 ?>
 
@@ -56,13 +62,11 @@
   </div>
   <div style="float: left; margin-right: 280px">
     <h3>Seller Name:</h3>
-    <blockquote>{{$seller->user_name}}</blockquote>
+    <blockquote>{{$seller_name}}</blockquote>
     <h3>Seller email:</h3>
-    <blockquote>{{$seller->email}}</blockquote>
+    <blockquote>{{$seller_email}}</blockquote>
   </div>
   <div class="imgDef" style="font-size: 17px; float: right; margin-left:280px ">
-    <h3>Name:</h3>
-    <blockquote>{{$post->owner_name}}</blockquote>
     <h3>Product name:</h3>
     <blockquote>{{$post->name}}</blockquote>
     <h3>Ашигласан хугацаа:</h3>
@@ -72,12 +76,12 @@
     <h3>Нэмэлт тайлбар:</h3>
     <blockquote>{{$post->description}}</blockquote>
   </div>
-  <form action="/bid" method="post" enctype="multipart/form-data">
+  <form action="/bid/{{ $post->id }}" method="post" enctype="multipart/form-data">
+  {{ csrf_field() }}
     Санал болгох үнэ: <input type='number' name='bid'><br>
-    <button>Болих</button>
-    <button>Үнийн санал илгээх</button>
-    <button>Холбогдох</button>
-    <button>Худалдаж авах</button>
+    <input type="submit" name="submitbutton" value='send'>Үнийн санал илгээх</input>
+    <input type="submit" name="submitbutton" value='message'>Холбогдох</input>
+    <input type="submit" name="submitbutton" value='buy'>Худалдаж авах</input>
   </form>
 </div>
 

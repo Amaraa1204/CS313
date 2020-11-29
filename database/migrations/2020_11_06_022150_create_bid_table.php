@@ -13,8 +13,12 @@ class CreateBidTable extends Migration
      */
     public function up()
     {
-        Schema::create('bid', function (Blueprint $table) {
+        Schema::create('bids', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id');
+            $table->bigInteger('post_id');
+            $table->string('amount');
+            $table->string('state');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateBidTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bid');
+        Schema::dropIfExists('bids');
     }
 }

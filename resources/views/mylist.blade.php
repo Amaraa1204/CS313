@@ -42,11 +42,10 @@
 
 <?php  
   use App\Posts;
-  $posts=Posts::where('owner_name',$userName)->get();
-
+    $posts = Posts::where('owner_id', $id)->get(); 
   foreach ($posts as $post) {
     $photo = "http://localhost:8000/itemImages/".$post->photo."";
-    $path = "'http://localhost:8000/shop/a/".$post->id."'";
+    $path = "'http://localhost:8000/b/".$post->id."'";
     echo '<li>
     <img src="'.$photo.'">
     <div style="float: left; margin-left: 30px;"><h2>Нэр:</h2>
