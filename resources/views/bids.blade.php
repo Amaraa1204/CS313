@@ -3,7 +3,8 @@
 <head>
     <title>Thirft Shop Mongolia</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('home.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('item.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('itemList.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('list.css') }}">
     <script src="{{ asset('click.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <style type="text/css">
@@ -40,8 +41,9 @@
 <?php  
   use App\Posts;
   use App\user;
+  use App\Bid;
 
-  $post=Posts::where('id',$itemID)->first();
+  $post=Posts::where('id',$id)->first();
   $photo = "http://localhost:8000/itemImages/".$post->photo."";
   if (user::where('id', $post->owner_id)->first()==null){
     $seller_name = "User not found";
@@ -53,34 +55,37 @@
     $seller_email = $user->email;
   }
 
-  $path = "'http://localhost:8000/bid/".$post->id."/show'";
-
 ?>
 
 <br>
 <div class="item">
-  <div class="img">
-    <img height="500px" src={{$photo}}>
-  </div>
   <div style="float: left; margin-right: 280px">
-    <h3>Seller Name:</h3>
-    <blockquote>{{$seller_name}}</blockquote>
-    <h3>Seller email:</h3>
-    <blockquote>{{$seller_email}}</blockquote>
-  </div>
-  <div class="imgDef" style="font-size: 17px; float: right; margin-left:280px ">
     <h3>Product name:</h3>
     <blockquote>{{$post->name}}</blockquote>
-    <h3>Ашигласан хугацаа:</h3>
-    <blockquote>{{$post->time}}</blockquote>
-    <h3>Үнэ:</h3>
-    <blockquote>{{$post->price}}</blockquote>
-    <h3>Нэмэлт тайлбар:</h3>
-    <blockquote>{{$post->description}}</blockquote>
   </div>
-  <button onclick="window.location.href='{{ action('PostController@edit', $post->id )}}'">Мэдээллээ өөрчлөх</button>
-  <button onclick="window.location.href={{$path}}">bid</button>
 </div>
+
+<ul style="margin-top: 150px;">
+
+<?php  
+$bids = Bid::where('post_id', $post->id)->get();
+  foreach ($bids as $bid) {
+    $user = user::where('id', $bid->user_id)->first();
+    echo '<li>
+    <div style="float: left; margin-left: 30px;"><h2>Нэр:</h2>
+    <blockquote>'.$user->user_name.'</blockquote></div>
+    <div style="float: right; margin-right: 30px;"><h2>Хэмжээ:</h2>
+    <blockquote>'.$bid->amount.'</blockquote><blockquote>'.$bid->id.'</blockquote></div>
+    <form action="/bids/'.$bid->id.'" method="post" enctype="multipart/form-data">
+    '.csrf_field().'
+    <input type="submit" name="submitbutton" value="accept">Зөвшөөрөх</input>
+    <input type="submit" name="submitbutton" value="message">Холбогдох</input>
+  </form>
+    </li>';
+  }
+
+?>  
+</ul>
 
 <!--<footer id="footer" align="center">
   <h3>Thrift shop</h3>

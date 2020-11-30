@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\Posts;
 
 class UserController extends Controller
 {
@@ -113,6 +114,10 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
         //DB::table('users')->where('id', '=', $id)->delete();
+        $posts = Posts::where('owner_id', $id)->get();
+        foreach ($posts as $post){
+            $post->delete();
+        }
         return redirect()->route('home')->with('success', 'Data Deleted');
     }
 }

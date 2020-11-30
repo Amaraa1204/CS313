@@ -33,7 +33,7 @@
     <a href="http://localhost:8000/login" class="userReg">Sign in</a>
     <a href="http://localhost:8000/register" class="userReg">Register</a>
     @endauth
-</div><br>
+</div><br><br><br><br>
 <div class="container">
    <div class="img">
     <img src="/images/{{ $user->photo }}" style="width: 300px; object-fit: cover;">
@@ -43,7 +43,7 @@
   use App\user;
         
   $user = Auth::user();
-  $path=  "'http://localhost:8000/profile/".$user->user_name."/mylist'";
+  $path = "'http://localhost:8000/profile/".$user->id."/mylist'";
 
   ?>
 <div class="definition">
