@@ -24,12 +24,6 @@ Route::get('/sell', function(){
 Route::resource('/profile', 'UserController');
 Route::resource('/profile/{id}/edit', 'ProfileController');
 
-Route::get('/register', function(){
-	return view('register');
-});
-Route::get('/login', function(){
-	return view('login');
-});
 
 Auth::routes();
 
