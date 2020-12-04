@@ -42,7 +42,9 @@
 
 <?php  
   use App\Posts;
-    $posts = Posts::where('id', $id)->get(); 
+  use App\user;
+  $user = Auth::user();
+    $posts = Posts::where('owner_id', $user->id)->get(); 
   foreach ($posts as $post) {
     $photo = "http://localhost:8000/itemImages/".$post->photo."";
     $path = "'http://localhost:8000/b/".$post->id."'";
