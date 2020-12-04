@@ -51,13 +51,7 @@
     $seller_id = $user->id;
     $seller_email = $user->email;
   }
-  if($post->type != 'shirt'){
     $type = $post->type;
-  }
-  else{
-    $type = "";
-  }
-
 ?>
 
 <div align = "center" style="margin-top: -85px;">
@@ -72,9 +66,11 @@
                   	Хувцасны нэр:<br>
                   	<input type="text" name="name" value="{{ $post->name }}"><br>
                   	Хувцасны төрөл: <br>
-                  	<input type="radio" name="type" value="shirt" {{ $post->type == "shirt" ? 'checked' : '' }}>Shirt<br>
-                    <input type="radio" name="type" value="dif" {{ $post->type == $type ? 'checked' : '' }}>Өөр төрөл<br>
-                    <input type="text" name="addType" hint="Төрлөө бичих" value="{{ $type }}"><br>
+                    <input id="type" type="radio" name="type" value="shirt" {{ $post->type == "shirt" ? 'checked' : '' }}>Shirt<br>
+                    <input id="type" type="radio" name="type" value="hat" {{ $post->type == "hat" ? 'checked' : '' }}>Hat<br>
+                    <input id="type" type="radio" name="type" value="trouser" {{ $post->type == "trouser" ? 'checked' : '' }}>Trousers<br>
+                    <input id="type" type="radio" name="type" value="jacket" {{ $post->type == "jacket" ? 'checked' : '' }}>Jackets<br>
+                    <input id="type" type="radio" name="type" value="shoe" {{ $post->type == "shoe" ? 'checked' : '' }}>Shoes<br>
                     Ашигласан хугацаа(сар):<br>
                   	<input type="number" name="time" value="{{ $post->time }}"><br>
                   	Үнэ(төгрөг):<br>

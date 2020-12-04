@@ -16,7 +16,15 @@
   left: 0px;
   bottom: 0;
   background-color: #1D556A;
- }
+      }
+  #btn {
+    background-color: #BC69FD; 
+    margin-left: 30px; 
+    border: none;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
     </style>
     <meta charset="utf8">
 </head>
@@ -62,13 +70,13 @@
   <div class="img">
     <img height="500px" src={{$photo}}>
   </div>
-  <div style="float: left; margin-right: 280px">
+  <div style="float: left; margin-right: 0px">
     <h3>Seller Name:</h3>
     <blockquote>{{$seller_name}}</blockquote>
     <h3>Seller email:</h3>
     <blockquote>{{$seller_email}}</blockquote>
   </div>
-  <div class="imgDef" style="font-size: 17px; float: right; margin-left:280px ">
+  <div class="imgDef" style="font-size: 17px; float: right; margin-left:0px ">
     <h3>Product name:</h3>
     <blockquote>{{$post->name}}</blockquote>
     <h3>Ашигласан хугацаа:</h3>
@@ -78,9 +86,11 @@
     <h3>Нэмэлт тайлбар:</h3>
     <blockquote>{{$post->description}}</blockquote>
   </div>
-  <button onclick="window.location.href='{{ action('PostController@edit', $post->id )}}'">Мэдээллээ өөрчлөх</button>
-  <button onclick="window.location.href={{$path}}">bid</button>
-</div>
+  <div>
+<button id = "btn" onclick="window.location.href='{{ action('PostController@edit', $post->id )}}'">Мэдээллээ өөрчлөх</button>
+    <button id = "btn" onclick="window.location.href={{$path}}">Үнийн санал харах</button>
+    </div>
+  </div>
 
 <!--<footer id="footer" align="center">
   <h3>Thrift shop</h3>
