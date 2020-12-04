@@ -66,11 +66,11 @@ class PostController extends Controller
         $id = $user->id;
 
         $type = $_POST['type'];
-        if ($type == "dif") {
+        /*if ($type == "dif") {
             $type = $_POST['addType'];
         }else{
             $type = $_POST['type'];
-        }
+        }*/
 
         Posts::create([
             'owner_id' => $id,
@@ -104,8 +104,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        return view('edit_post')->with([ 'id' => $id ]);
         //$post = Posts::where('id',$id)->first();
-        return view('edit_post', compact('post', 'id'));
+        //return view('', compact('post', 'id'));
     }
 
     /**
@@ -138,13 +139,8 @@ class PostController extends Controller
         $user_id = $user->id;
 
         $type = $_POST['type'];
-        if ($type == "dif") {
-            $type = $_POST['addType'];
-        }else{
-            $type = $_POST['type'];
-        }
 
-        Posts::update([
+        DB::table('posts')->where("id", $id)->update([
             'owner_id' => $user_id,
             'name' => $_POST['name'],
             'type' => $type,
