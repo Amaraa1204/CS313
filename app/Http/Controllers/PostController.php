@@ -8,6 +8,7 @@ use App\Posts;
 use App\user;
 use App\Bid;
 use Auth;
+use Imagick;
 
 class PostController extends Controller
 {
@@ -54,7 +55,7 @@ class PostController extends Controller
         if ($request->hasFile('photo')) {
             $request->file('photo');
             $photo = $request->file('photo');
-        $new_name = rand() . '.' . $photo->getClientOriginalExtension();
+        $new_name = date('d_m_y_h_i_s') . '.' . $photo->getClientOriginalExtension();
         $photo->move(public_path("itemImages"), $new_name);
         #store('public/'.$new_name);
         #
@@ -125,7 +126,7 @@ class PostController extends Controller
         if ($request->hasFile('photo')) {
             $request->file('photo');
             $photo = $request->file('photo');
-        $new_name = rand() . '.' . $photo->getClientOriginalExtension();
+        $new_name = date('d_m_y_h_i_s') . '.' . $photo->getClientOriginalExtension();
         $photo->move(public_path("itemImages"), $new_name);
         #store('public/'.$new_name);
         #
@@ -139,6 +140,18 @@ class PostController extends Controller
         $user_id = $user->id;
 
         $type = $_POST['type'];
+        $post = Posts::where("id", $id)->first();
+
+        /*Posts::update(['id'=>$post['id']],
+        [
+            'owner_id' => $user_id,
+            'name' => $_POST['name'],
+            'type' => $type,
+            'time' => $_POST['time'],
+            'price' => $_POST['price'],
+            'description' => $_POST['def'],
+            'photo' => $new_name,
+        ]);*/
 
         DB::table('posts')->where("id", $id)->update([
             'owner_id' => $user_id,
@@ -149,15 +162,6 @@ class PostController extends Controller
             'description' => $_POST['def'],
             'photo' => $new_name,
         ]);
-
-        /*$post->name = $request->get('name');
-        $post->owner_id = $user_id;
-        $post->type = $type;
-        $post->time = $request->get('time');
-        $post->price = $request->get('price');
-        $post->description = $request->get('def');
-        $post->photo = $new_name;
-        $post->save();*/
 
     return redirect()->route('home')->with('success', 'Data Updated');
     }

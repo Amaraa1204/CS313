@@ -40,6 +40,7 @@
     $post->photo;
     $photo = "background:url(http://localhost:8000/itemImages/".$post->photo.");";
     $path = "'http://localhost:8000/shop/a/".$post->id."'";
+    $status = "";
     //echo $photo;
     //echo "<br><br>";
     if (user::where('id', $post->owner_id)->first() == null) {

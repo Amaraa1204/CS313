@@ -3,7 +3,7 @@
 <head>
     <title>Thirft Shop Mongolia</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('home.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('login_signup.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('sell.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <style type="text/css">
         #footer {
@@ -54,45 +54,71 @@
     $type = $post->type;
 ?>
 
-<div align = "center" style="margin-top: -85px;">
-  <div class="head" >
-    <div class="head1" >
-      <b>Шинэчлэх</b>
-    </div>
-    <div style = "margin-top: 17px">
-    <form action="{{action('PostController@update', $post->id )}}" method="post" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    {{ method_field('PATCH') }}
-                  	Хувцасны нэр:<br>
-                  	<input type="text" name="name" value="{{ $post->name }}"><br>
-                  	Хувцасны төрөл: <br>
-                    <input id="type" type="radio" name="type" value="shirt" {{ $post->type == "shirt" ? 'checked' : '' }}>Shirt<br>
-                    <input id="type" type="radio" name="type" value="hat" {{ $post->type == "hat" ? 'checked' : '' }}>Hat<br>
-                    <input id="type" type="radio" name="type" value="trouser" {{ $post->type == "trouser" ? 'checked' : '' }}>Trousers<br>
-                    <input id="type" type="radio" name="type" value="jacket" {{ $post->type == "jacket" ? 'checked' : '' }}>Jackets<br>
-                    <input id="type" type="radio" name="type" value="shoe" {{ $post->type == "shoe" ? 'checked' : '' }}>Shoes<br>
-                    Ашигласан хугацаа(сар):<br>
-                  	<input type="number" name="time" value="{{ $post->time }}"><br>
-                  	Үнэ(төгрөг):<br>
-                  	<input type="number" name="price" value="{{ $post->price }}"><br>
-                  	Тайлбар:<br>
-                  	<input type="text" name="def" style="height: 100px" value="{{ $post->description }}"><br>
-                  	Зураг:<br><br>
-                        <label class="button" for="photo">Choose file</label>
-                        <div class="col-md-6">
-                            <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" required autocomplete="photo" id="upload-photo" style="opacity: 0;" multiple>
-                            <img height="500px" style="width: 200px; height: 200px;object-fit: cover;" src="/itemImages/{{ $post->photo }}">
-                            @error('photo')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    
-                  	<input type="submit" value="Байршуулах" name="submit" class="button"></div>
-              	</form>
-    </div>
-  </div>
+<div class="head1"><b>Шинэчлэх</b></div>
+<div class="sell-form">  
+  <form action="{{action('PostController@update', $post->id )}}" method="post" enctype="multipart/form-data">
+  {{ csrf_field() }}
+  {{ method_field('PATCH') }}
+  <div class="row">
+    <div class="column">
+      <label for="name">Хувцасны нэр:</label>
+       <input type="text" name="name" id="name" value="{{ $post->name }}">
+        @error('name')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+          <label for="type">Хувцасны төрөл:</label>
+          <select name="type" id="type">
+                    <option value="shirt" {{ $post->type == "shirt" ? 'selected' : '' }}>Shirt</option>          
+                    <option value="hat" {{ $post->type == "hat" ? 'selected' : '' }}>Hat</option>          
+                    <option value="trouser" {{ $post->type == "trouser" ? 'selected' : '' }}>Trousers</option>          
+                    <option value="jacket" {{ $post->type == "jacket" ? 'selected' : '' }}>Jacket</option>          
+                    <option value="shoes" {{ $post->type == "shoe" ? 'selected' : '' }}>Shoes</option>            
+          </select>
+             @error('type')
+               <span class="invalid-feedback" role="alert">
+                   <strong>{{ $message }}</strong>
+               </span>
+               @enderror<br>
+              <label for="time">Ашигласан хугацаа(сар):</label>
+               <input id="time" type="number" name="time" value="{{ $post->time }}">
+               @error('time')
+               <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+               <label for="price">Үнэ(төгрөг):</label>
+              <input type="number" name="price" id="price" value="{{ $post->price }}">
+              @error('price')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+            </div>
+
+          <div class="column">     
+               <label for="def">Тайлбар:</label>
+              <input id="def" type="text" name="def" style="height: 100px" value="{{ $post->description }}"><br>
+              @error('def')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+              Зураг:<br><br>
+              <label class="button" for="photo">Choose file</label>
+              <div class="col-md-6">
+                <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" required autocomplete="photo" id="upload-photo" style="opacity: 0;" multiple>
+                <img height="500px" style="width: 200px; height: 200px;object-fit: cover;" src="/itemImages/{{ $post->photo }}">
+                @error('photo')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+                <input type="submit" value="Байршуулах" name="submit" class="button"></div>
+              </div>
+            </div>
+        </form>
 </div>
 <!--<footer id="footer" align="center" style=" position: relative; margin-top: 1000px">
   <h3>Thrift shop</h3>
