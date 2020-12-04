@@ -57,7 +57,7 @@ class PostController extends Controller
             $photo = $request->file('photo');
         $new_name = date('d_m_y_h_i_s') . '.' . $photo->getClientOriginalExtension();
         $photo->move(public_path("itemImages"), $new_name);
-        #store('public/'.$new_name);
+        #store('/'.$new_name);
         #
         }else{
             return 'No files found';

@@ -37,8 +37,8 @@
   $posts = Posts::all();
   foreach ($posts as $post) {
     //echo $post;
-    $post->photo;
-    $photo = "background:url(http://localhost:8000/itemImages/".$post->photo.");";
+    $photo = $post->photo;
+    $photo = "background:url(http://localhost:8000/itemImages/".$photo.");";
     $path = "'http://localhost:8000/shop/a/".$post->id."'";
     $status = "";
     //echo $photo;
