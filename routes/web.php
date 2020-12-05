@@ -6,8 +6,6 @@ Route::get('/', function () {
 Route::get('/shop', function(){
 	return view('shop');
 });
-Route::get('/shop/{id}', array('uses'=>'ItemController@showList'));
-
 
 Route::get('/shop/a/{id}', function($id){
 		return view('a')->with('itemID',$id);
@@ -45,3 +43,5 @@ Route::get('/bid/{id}/show', function($id){
 });
 
 Route::post('/bids/{id}', 'PostController@bid_change');
+
+Route::post('/search', 'ItemController@search');

@@ -12,7 +12,8 @@
     @auth
     <a href="http://localhost:8000/shop" class="menuOptions">Shop</a>
     <a href="http://localhost:8000/sell" class="menuOptions">Sell</a>
-    <form>
+    <form action="/search" method="post" enctype="multipart/form-data">
+    {{ csrf_field() }}
         <input type="text" id="search-bar" name="search" placeholder="Search..">
     </form>
     <a href="http://localhost:8000/profile" class="userReg">Profile</a>
@@ -21,9 +22,6 @@
             @csrf
         </form>
     @else
-    <form>
-        <input type="text" id="search-bar" name="search" placeholder="Search..">
-    </form>
     <a href="http://localhost:8000/login" class="userReg">Sign in</a>
     <a href="http://localhost:8000/login" class="userReg">Register</a>
     @endauth

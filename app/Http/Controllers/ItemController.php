@@ -8,13 +8,12 @@ use App\user;
 use App\Item;
 class ItemController extends Controller
 {
-    public function showList($type){
-    	$posts=Posts::where('type', $type)->get();
-    	return view('shoes', compact('posts'));
-    }
-
-    public static function find_user($id){
-        $name = user::where('id', $id);
-        return $name;
+    public function search(){
+        $search = $_POST['search'];
+        $posts = Posts::whereRaw('LOWER(name) like (?)', strtolower($search))->get();
+        #'column', 'ilike', '%' . $value . '%'
+        #"UPPER('{$column}') LIKE '%'". strtoupper($value)."'%'"
+        #echo $search;
+        return view('/search')->with('posts', $posts);
     }
 }
