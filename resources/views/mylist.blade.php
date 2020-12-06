@@ -58,16 +58,14 @@
     <div style="float: right; margin-left: 30px;"><h2>Нийтэлсэн:</h2>
     <blockquote>'.$post->created_at.'</blockquote></div>
 
-
-
     </li>';
   }
 
 ?>  
 </ul>
-<footer id="footer" align="center">
+<!--<footer id="footer" align="center">
   <h3>Thrift shop</h3>
   <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>
-</footer>
+</footer-->
 </body>
 </html>

@@ -67,7 +67,6 @@
     <input type='number' name='bid'>
     <input type="submit" name="submitbutton" value='send'></input>
     <br>
-    <input type="submit" name="submitbutton" value='message'></input>
     <input type="submit" name="submitbutton" value='buy'></input>
   </form>
 </div>
