@@ -218,7 +218,7 @@ class PostController extends Controller
                 foreach($bids as $bid){
                     Bid::where('id', $bid->id)->first()->update(array('state'=>"unaccepted"));
                 }
-                $post->update('status', "SOLD");
+                $post->update(array('status'=>"SOLD"));
             break;
         }
 
