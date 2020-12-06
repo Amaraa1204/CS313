@@ -9,12 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <meta charset="utf8">
 </head>
-<body>
-    <div class="navbar">
+<body> <div class="navbar">
     <a href="http://localhost:8000" class="menuOptions">Home</a>
     @auth
     <a href="http://localhost:8000/shop" class="menuOptions">Shop</a>
     <a href="http://localhost:8000/sell" class="menuOptions">Sell</a>
+    <form action="/search" method="post" enctype="multipart/form-data">
+    {{ csrf_field() }}
+        <input type="text" id="search-bar" name="search" placeholder="Search..">
+    </form>
     <a href="http://localhost:8000/profile" class="userReg">Profile</a>
      <a class="userReg" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -22,7 +25,7 @@
         </form>
     @else
     <a href="http://localhost:8000/login" class="userReg">Sign in</a>
-    <a href="http://localhost:8000/register" class="userReg">Register</a>
+    <a href="http://localhost:8000/login" class="userReg">Register</a>
     @endauth
 </div><br>
 

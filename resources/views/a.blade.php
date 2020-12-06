@@ -6,18 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('item.css') }}">
     <script src="{{ asset('click.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
-    <style type="text/css">
-      #footer {
-  position: relative;
-  margin-top: 850px;
-  margin-bottom: 0px;
-  width: 100%;  
-  height: 100px; 
-  left: 0px;
-  bottom: 0;
-  background-color: #1D556A;
- }
-    </style>
+   
     <meta charset="utf8">
 </head>
 <body>
@@ -26,6 +15,10 @@
     @auth
     <a href="http://localhost:8000/shop" class="menuOptions">Shop</a>
     <a href="http://localhost:8000/sell" class="menuOptions">Sell</a>
+    <form action="/search" method="post" enctype="multipart/form-data">
+    {{ csrf_field() }}
+        <input type="text" id="search-bar" name="search" placeholder="Search..">
+    </form>
     <a href="http://localhost:8000/profile" class="userReg">Profile</a>
      <a class="userReg" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -33,7 +26,7 @@
         </form>
     @else
     <a href="http://localhost:8000/login" class="userReg">Sign in</a>
-    <a href="http://localhost:8000/register" class="userReg">Register</a>
+    <a href="http://localhost:8000/login" class="userReg">Register</a>
     @endauth
 </div><br>
 

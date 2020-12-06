@@ -3,6 +3,9 @@
 <head>
     <title>Thirft Shop Mongolia</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('shop.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('itemList.css') }}">
+
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <meta charset="utf8">
 </head>
@@ -26,14 +29,48 @@
     <a href="http://localhost:8000/login" class="userReg">Register</a>
     @endauth
 </div><br>
-<div class="container">
-	<img src="images/pic1.jpg" class="homeImg" id="rotate" style="margin-left: 5%; width: 400px; height: 300px;">
-	<img src="images/pic2.jpg" class="homeImg" style="margin-left: 15%; width: 400px; height: 300px; ">
-    <img src="images/pic1.jpg" class="homeImg" id="rotate" style="margin-left: 5%; width: 400px; height: 300px;">
-	<img src="images/pic2.jpg" class="homeImg" style="margin-left: 15%; width: 400px; height: 300px; ">
-    <img src="images/pic1.jpg" class="homeImg" id="rotate" style="margin-left: 5%; width: 400px; height: 300px;">
-	<img src="images/pic2.jpg" class="homeImg" style="margin-left: 15%; width: 400px; height: 300px; ">
 
+
+<div align="center" style=" margin-top: 80px;">
+  <?php  
+  use App\Posts;
+  use App\user;
+  use App\Bid;
+  $posts = Posts::all();
+  foreach ($posts as $post) {
+    //echo $post;
+    $photo = $post->photo;
+    $photo = "background:url(http://localhost:8000/itemImages/".$photo.");";
+    $path = "'http://localhost:8000/shop/a/".$post->id."'";
+    $status = "";
+    //echo $photo;
+    //echo "<br><br>";
+    if (user::where('id', $post->owner_id)->first() == null) {
+      $username = 'User not found';
+    }
+    else{
+      $username = user::where('id', $post->owner_id)->first()->name;
+    }
+    if (Bid::where('post_id', $post->id)->get() != null){
+      $bids = Bid::where('post_id', $post->id)->get();
+      foreach ($bids as $bid){
+        if($bid->state == "accepted" || $bid->state == "unaccepted"){
+          $status = "SOLD";
+        }
+        else{
+          $status = "";
+        }
+      }
+    }
+    echo '<button class="item" style="'.$photo.' position: center; background-size: cover;" onclick="window.location.href='.$path.';">
+      <br><br><br><br><br><br><br><br><br>
+      '.$username.'<br>
+      '.$post->name.'<br>
+      '.$post->price.'<br> 
+      '.$status.'<br>
+    </button>';
+  }
+  ?>
 </div>
 <footer id="footer">
   <h3>Thrift shop</h3>

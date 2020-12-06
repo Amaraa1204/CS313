@@ -1,0 +1,48 @@
+.profile-container{
+	position: relative;
+	margin-top: 8%;
+	left:10%;
+}
+#profile-pic{
+	width: 300px;
+	object-fit: cover;
+  	border-radius: 50%;
+  	float: left;
+}
+.user-info{
+    background-color: #cdb4db;
+    position: relative;
+    width: 30%;
+    padding-left: 52px;
+    float: left;
+    left: 8%;
+    border-radius: 80px;
+    font-size: 22px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.profile-btn {
+  position: absolute;
+  display: inline-block;
+  top:250px;
+  left: 2%;
+  width: 100%;
+}
+
+.profile-btn button{
+  background-color: #ada7c9;
+  color: white;
+  text-decoration: none;
+  padding: 10px 10px;
+  border: none;
+  display: block;
+  width: 15%;
+  margin-top: 5px; 
+  border-radius: 10px;
+  font-size: 22px;
+
+  width: 20%;
+
+  font-family: 'Indie Flower', cursive;
+
+}

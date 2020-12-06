@@ -16,7 +16,7 @@ h1 { font-size: 60px;
 .navbar {
   z-index:1;
   overflow: hidden;
-  background-color:#e7cafe;
+  background-color:rgba(94, 84, 142, 0.78);
   position: fixed;
   top: 0;
   left: 0;
@@ -95,13 +95,11 @@ h1 { font-size: 60px;
 #footer {
   background-image: linear-gradient(to right, #cd4ef1, #4727f8);
   height: 100px;
-  padding-top: 15px;
-  padding-left: 15px;
   text-align: center;
-  margin-left: -8px;
   width: 100%;
-  position: relative;
-  
+  position: absolute;
+  bottom: 0;
+  left: 0;
  }
 .notification {
   background-color: #D9BFDA;
