@@ -75,7 +75,7 @@ class RegisterController extends Controller
         if ($request->hasFile('photo')) {
             $request->file('photo');
             $photo = $request->file('photo');
-        $new_name = rand() . '.' . $photo->getClientOriginalExtension();
+        $new_name = date('d_m_y_h_i_s') . '.' . $photo->getClientOriginalExtension();
         $photo->move(public_path("images"), $new_name);
         }else{
             return 'No files found';

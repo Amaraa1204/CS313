@@ -16,26 +16,21 @@ Route::get('/b/{id}', function($id){
 });
 Route::resource('/b', 'PostController');
 
-Route::get('/sell', function(){
-	return view('sell');
-});
 Route::resource('/profile', 'UserController');
-Route::resource('/profile/{id}/edit', 'ProfileController');
 
+Route::get('/profile/{id}/mylist',function($id){
+	return view('mylist')->with('id', $id);
+});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 //Route::resource('/sell','PostController');
-
-Route::get('/create', 'PostController@create');
-Route::post('/publish', 'PostController@store');
-
-
-Route::get('/profile/{id}/mylist',function($id){
-	return view('mylist')->with('id', $id);
+Route::get('/sell', function(){
+	return view('sell');
 });
+Route::post('/publish', 'PostController@store');
 
 Route::post('/bid/{id}', 'PostController@bid');
 Route::get('/bid/{id}/show', function($id){

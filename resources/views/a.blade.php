@@ -73,7 +73,6 @@
   {{ csrf_field() }}
     Санал болгох үнэ: <input type='number' name='bid'><br>
     <input type="submit" name="submitbutton" value='send'>Үнийн санал илгээх</input>
-    <input type="submit" name="submitbutton" value='message'>Холбогдох</input>
     <input type="submit" name="submitbutton" value='buy'>Худалдаж авах</input>
   </form>
 </div>

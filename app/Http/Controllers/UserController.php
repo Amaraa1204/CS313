@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Posts;
+use App\Bid;
 
 class UserController extends Controller
 {
@@ -75,7 +76,7 @@ class UserController extends Controller
         if ($request->hasFile('photo')) {
             $request->file('photo');
             $photo = $request->file('photo');
-        $new_name = rand() . '.' . $photo->getClientOriginalExtension();
+        $new_name = date('d_m_y_h_i_s') . '.' . $photo->getClientOriginalExtension();
         $photo->move(public_path("images"), $new_name);
         }else{
             return 'No files found';
@@ -117,6 +118,10 @@ class UserController extends Controller
         $posts = Posts::where('owner_id', $id)->get();
         foreach ($posts as $post){
             $post->delete();
+        }
+        $bids = Bid::where('user_id', $id)->get();
+        foreach ($bids as $bid){
+            $bid->delete();
         }
         return redirect()->route('home')->with('success', 'Data Deleted');
     }

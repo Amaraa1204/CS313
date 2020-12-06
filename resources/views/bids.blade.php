@@ -79,7 +79,6 @@ $bids = Bid::where('post_id', $post->id)->get();
     <form action="/bids/'.$bid->id.'" method="post" enctype="multipart/form-data">
     '.csrf_field().'
     <input type="submit" name="submitbutton" value="accept">Зөвшөөрөх</input>
-    <input type="submit" name="submitbutton" value="message">Холбогдох</input>
   </form>
     </li>';
   }
