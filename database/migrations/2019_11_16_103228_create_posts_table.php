@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('time');
             $table->string('price');
             $table->string('description');
+            $table->string('status');
             $table->string('photo')->default('photo.jpg');
         });
     }

@@ -51,23 +51,12 @@
     else{
       $username = user::where('id', $post->owner_id)->first()->name;
     }
-    if (Bid::where('post_id', $post->id)->get() != null){
-      $bids = Bid::where('post_id', $post->id)->get();
-      foreach ($bids as $bid){
-        if($bid->state == "accepted" || $bid->state == "unaccepted"){
-          $status = "SOLD";
-        }
-        else{
-          $status = "";
-        }
-      }
-    }
     echo '<button class="item" style="'.$photo.' position: center; background-size: cover;" onclick="window.location.href='.$path.';">
       <br><br><br><br><br><br><br><br><br>
       '.$username.'<br>
       '.$post->name.'<br>
       '.$post->price.'<br> 
-      '.$status.'<br>
+      '.$post->status.'<br>
     </button>';
   }
   ?>

@@ -80,6 +80,7 @@ class PostController extends Controller
             'time' => $_POST['time'],
             'price' => $_POST['price'],
             'description' => $_POST['def'],
+            'status' => "Available",
             'photo' => $new_name,
         ]);
         return view('home');
@@ -217,10 +218,7 @@ class PostController extends Controller
                 foreach($bids as $bid){
                     Bid::where('id', $bid->id)->first()->update(array('state'=>"unaccepted"));
                 }
-            break;
-        
-            case 'message': 
-                //action for save-draft here
+                $post->update('status', "SOLD");
             break;
         }
 
