@@ -7,21 +7,7 @@
     <script src="{{ asset('click.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <meta charset="utf8">
-    <style type="text/css">
-      #footer {
-  position: relative;
-  margin-top: 1000px;
-  width: 100%;  
-  height: 100px; 
-  left: 0px;
-  bottom: 0;
-  background-color: #1D556A;
- }
- #type{
-     float: left;
-     width: 5%;
- }
-    </style>
+    
 </head>
 <body>
     <div class="navbar">
