@@ -44,7 +44,7 @@
   use App\Bid;
 
   $post=Posts::where('id',$id)->first();
-  $photo = "http://localhost:8000/itemImages/".$post->photo."";
+  $photo = "background:url(http://localhost:8000/itemImages/".$post->photo.");";
   if (user::where('id', $post->owner_id)->first()==null){
     $seller_name = "User not found";
     $seller_email = " ";
@@ -58,7 +58,7 @@
 ?>
 
 <br>
-<div class="item">
+<div class="item" style="{{$photo}} position: center; background-size: cover;">
   <div style="float: left; margin-right: 280px">
     <h3>Product name:</h3>
     <blockquote>{{$post->name}}</blockquote>
