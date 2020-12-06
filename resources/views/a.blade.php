@@ -51,7 +51,7 @@
 <br>
 <div class="item">
 
-    <img id="item-pic" height="500px" src={{$photo}}>
+    <img id="item-pic" height="200px" width="300px" src={{$photo}}>
     
   <div class="item-info">
     <div class="column-info"> 
@@ -67,7 +67,6 @@
     <input type='number' name='bid'>
     <input type="submit" name="submitbutton" value='send'></input>
     <br>
-    <input type="submit" name="submitbutton" value='message'></input>
     <input type="submit" name="submitbutton" value='buy'></input>
   </form>
 </div>
