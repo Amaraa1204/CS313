@@ -50,36 +50,47 @@
 
 <br>
 <div class="item">
-  <div class="img">
-    <img height="500px" src={{$photo}}>
-  </div>
-  <div style="float: left; margin-right: 280px">
-    <h3>Seller Name:</h3>
-    <blockquote>{{$seller_name}}</blockquote>
-    <h3>Seller email:</h3>
-    <blockquote>{{$seller_email}}</blockquote>
-  </div>
-  <div class="imgDef" style="font-size: 17px; float: right; margin-left:280px ">
-    <h3>Product name:</h3>
-    <blockquote>{{$post->name}}</blockquote>
-    <h3>Ашигласан хугацаа:</h3>
-    <blockquote>{{$post->time}}</blockquote>
-    <h3>Үнэ:</h3>
-    <blockquote>{{$post->price}}</blockquote>
-    <h3>Нэмэлт тайлбар:</h3>
-    <blockquote>{{$post->description}}</blockquote>
-  </div>
-  <form action="/bid/{{ $post->id }}" method="post" enctype="multipart/form-data">
-  {{ csrf_field() }}
-    Санал болгох үнэ: <input type='number' name='bid'><br>
-    <input type="submit" name="submitbutton" value='send'>Үнийн санал илгээх</input>
-    <input type="submit" name="submitbutton" value='message'>Холбогдох</input>
-    <input type="submit" name="submitbutton" value='buy'>Худалдаж авах</input>
+
+    <img id="item-pic" height="500px" src={{$photo}}>
+    
+  <div class="item-info">
+    <div class="column-info"> 
+      Зарын эзэн:
+      <p id="info">{{$seller_name}}</p>
+      Цахим шуудан:
+      <p id="info">{{$seller_email}}</p>
+
+      <div class="bid-info" >
+      <form action="/bid/{{ $post->id }}" method="post" enctype="multipart/form-data">
+      {{ csrf_field() }}
+    Санал болгох үнэ:<br> 
+    <input type='number' name='bid'>
+    <input type="submit" name="submitbutton" value='send'></input>
+    <br>
+    <input type="submit" name="submitbutton" value='message'></input>
+    <input type="submit" name="submitbutton" value='buy'></input>
   </form>
 </div>
 
+
+    </div>
+    <div class="column-info"> 
+      Хувцасны нэр:
+      <p id="info">{{$post->name}}</p>
+      Ашигласан хугацаа:
+      <p id="info">{{$post->time}} сар</p>
+      Үнэ:
+      <p id="info">{{$post->price}} төг</p>
+      Нэмэлт тайлбар:
+      <p id="info">{{$post->description}}</p>
+    </div>
+  </div>
+
+  
+</div>
+
 <!--<footer id="footer" align="center">
-  <h3>Thrift shop</h3>
+  <p>Thrift shop</h3>
   <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  
 </footer>-->
 </body>

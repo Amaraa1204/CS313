@@ -1,31 +1,73 @@
-
-.img{
-  height: 500px;
-  float: left;
-  margin-left: 25px;
-}
-.imgDef{
-  margin-left: 10px;
-    font-size: 22px;
+*{
+  box-sizing: border-box;
 }
 .item{
-  width: 1200px;
-  margin-top: 50px;
-  margin-left: 100px;
+  margin-top: 40px;
 }
-.container{
-  min-height: 100%;
-    margin-bottom: -100px;
-    padding-bottom: 100px;
-}
-.definition .btn-group{  
-  display: inline;
+#item-pic{
+  object-fit: cover;
+  border-radius: 5%;
+  position: relative;
   float: left;
+  height: 450px;
+  left: 60px;
 }
-.definition .imgDef{  
-  display: inline;
+.bid-info{
+  background-color: #cdb4db;
+  position: relative;
   float: left;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  clear: both;
+  padding: 10px 10px;
 
+}
+input[type=number]{
+  width:50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit]{
+  background-color: #BC69FD;
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    border: none;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+input[type=submit]:hover{
+  color: black;
+  background: #d9f1fa;
+}
+
+.item-info{
+    background-color: #cdb4db;
+    position: relative;
+    width: 65%;
+    padding-left: 52px;
+    float: right;
+    right: 4%;
+    border-radius: 80px;
+    font-size: 22px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.item-info:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column-info{
+  float: left;
+  width: 50%;
+  padding: 10px;
 }
 .btn-group{
   margin-left: 100px;
