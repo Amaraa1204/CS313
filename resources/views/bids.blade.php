@@ -71,19 +71,25 @@
 $bids = Bid::where('post_id', $post->id)->get();
   foreach ($bids as $bid) {
     $user = user::where('id', $bid->user_id)->first();
-    echo '<li>
-    <div style="float: left; margin-left: 30px;"><h2>Нэр:</h2>
-    <blockquote>'.$user->user_name.'</blockquote></div>
-    <div style="float: right; margin-right: 30px;"><h2>Хэмжээ:</h2>
-    <blockquote>'.$bid->amount.'</blockquote><blockquote>'.$bid->id.'</blockquote></div>
+    echo '
+    <li>
+    <div class="bid-app" style="float: left; margin-left: 30px;">
+    <p style="margin-bottom: -16px;">Нэр:</p>
+    <blockquote>'.$user->user_name.'</blockquote>
+    </div>
+
+    <div style="float: left; margin-right: 80px;">
+    <p style="margin-bottom: -16px;">Xэмжээ:</p>
+    <blockquote>'.$bid->amount.'₮ </blockquote>
+    </div>
     <form action="/bids/'.$bid->id.'" method="post" enctype="multipart/form-data">
     '.csrf_field().'
-    <input type="submit" name="submitbutton" value="accept">Зөвшөөрөх</input>
+    <input type="submit" name="submitbutton" value="accept"></input>
   </form>
     </li>';
   }
 
-?>  
+?>
 </ul>
 
 <!--<footer id="footer" align="center">

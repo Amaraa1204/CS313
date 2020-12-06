@@ -37,3 +37,25 @@ img{
     color: white;
     text-shadow: #000 0px 0px 3px;
 }
+blockquote{
+  font-size: 35px;
+}
+input[type=submit]{
+  background-color: #BC69FD;
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    border: none;
+    margin-top: 50px;
+    margin-left: 70px;
+}
+input[type=submit]:hover{
+  color: black;
+  background: #d9f1fa;
+}
+.bid-app{
+  float: left; 
+  margin-left: 30px;
+  
+}
