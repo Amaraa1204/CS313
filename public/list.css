@@ -1,10 +1,11 @@
 li{
 	width: 70%;
 	height: 150px;
-	background-color: #9c1fff;
+	background-color: #af4d98;
 	list-style: none;
 	margin-top: 20px;
 	color: #34322F;
+	border-radius: 10px;
 }
 img{
 	height: 150px;

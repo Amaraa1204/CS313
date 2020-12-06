@@ -48,15 +48,15 @@
   foreach ($posts as $post) {
     $photo = "http://localhost:8000/itemImages/".$post->photo."";
     $path = "'http://localhost:8000/b/".$post->id."'";
-    echo '<li>
+    echo '
+    <li>
     <img src="'.$photo.'">
-    <div style="float: left; margin-left: 30px;"><h2>Нэр:</h2>
-    <blockquote>'.$post->name.'</blockquote></div>
+    <div style="float: left; margin-left: 30px;">
+    <h2>Нэр:</h2>
+    <blockquote>'.$post->name.'</blockquote>
+    </div>
     <button onclick="window.location.href='.$path.';"style="background-color: #BC69FD; margin-right: 30px; ">Дэлгэрэнгүй
     </button>
-
-    <div style="float: right; margin-left: 30px;"><h2>Нийтэлсэн:</h2>
-    <blockquote>'.$post->created_at.'</blockquote></div>
 
     </li>';
   }
