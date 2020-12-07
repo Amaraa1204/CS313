@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Auth;
 use App\User;
 use App\Posts;
@@ -71,7 +73,12 @@ class UserController extends Controller
     {
         $request = app('request');
         $this->validate($request, [
-            'photo'  =>  'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'user_name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:8',
+            'photo'  =>  'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         if ($request->hasFile('photo')) {
             $request->file('photo');
@@ -81,24 +88,22 @@ class UserController extends Controller
         }else{
             return 'No files found';
         }
-    /**
-     * Validate request/input 
-     **/
         $user = Auth::user();
-    $this->validate($request, [
-        'user_name' => 'required|string|max:255|unique:users',
-        'first_name' => 'required|string|max:255',
-        'last_name' => 'required|string|max:255',
-        'email' => 'required|string|email|max:255|unique:users',
-        'password' => 'required|string|min:8',
-    ]);
-        $user->user_name = $request->get('user_name');
+        /*$user->user_name = $request->get('user_name');
         $user->first_name = $request->get('first_name');
         $user->last_name = $request->get('last_name');
         $user->email = $request->get('email');
         $user->photo = $new_name;
-        $user->password = $request->get('password');
-        $user->save();
+        $user->password = Hash::make($data[$request->get('password')]);
+        $user->save();*/
+        $user->update([
+            'user_name' => $request->get('user_name'),
+            'first_name' => $request->get('first_name'),
+            'last_name' => $request->get('last_name'),
+            'email' => $request->get('email'),
+            'password' => Hash::make($request['password']),
+            'photo' => $new_name
+        ]);
     return redirect()->route('home')->with('success', 'Data Updated');
     }
 
