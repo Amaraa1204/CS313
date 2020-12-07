@@ -63,8 +63,9 @@
 </div>
 
 </body>
+<!--
 <footer id="footer">
   <h3>Thrift shop</h3>
   <p>© 2020 Sleepless Zombies Co.ltd. All Right Reserved. </p>
-</footer>
+</footer>-->
 </html>

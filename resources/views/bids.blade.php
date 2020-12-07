@@ -58,9 +58,11 @@
 ?>
 
 <br>
-<div class="item" style="{{$photo}} position: center; background-size: cover;">
+
+<div class="row">
+<div class="clothes" style="{{$photo}} position: center; background-size: cover;">
   <div style="float: left; margin-right: 280px">
-    <h3>Product name:</h3>
+    <br>
     <blockquote>{{$post->name}}</blockquote>
   </div>
 </div>
@@ -72,26 +74,26 @@ $bids = Bid::where('post_id', $post->id)->get();
   foreach ($bids as $bid) {
     $user = user::where('id', $bid->user_id)->first();
     echo '
-    <li>
-    <div class="bid-app" style="float: left; margin-left: 30px;">
-    <p style="margin-bottom: -16px;">Нэр:</p>
-    <blockquote>'.$user->user_name.'</blockquote>
-    </div>
+    <div class="bid-list">
+      <div class="list-info">
+      <p style="margin-bottom: -16px;">Нэр:</p>
+      <blockquote>'.$user->user_name.'</blockquote>
+      </div>
 
-    <div style="float: left; margin-right: 80px;">
-    <p style="margin-bottom: -16px;">Xэмжээ:</p>
-    <blockquote>'.$bid->amount.'₮ </blockquote>
-    </div>
-    <form action="/bids/'.$bid->id.'" method="post" enctype="multipart/form-data">
-    '.csrf_field().'
-    <input type="submit" name="submitbutton" value="accept"></input>
-  </form>
-    </li>';
+      <div class="list-info">
+      <p style="margin-bottom: -16px;">Xэмжээ:</p>
+      <blockquote>'.$bid->amount.'₮ </blockquote>
+      </div>
+      <form action="/bids/'.$bid->id.'" method="post" enctype="multipart/form-data">
+      '.csrf_field().'
+      <input type="submit" name="submitbutton" value="accept"></input>
+      </form>
+    </div>';
   }
 
 ?>
 </ul>
-
+</div>
 <!--<footer id="footer" align="center">
   <h3>Thrift shop</h3>
   <p>© 2019 Sleepless Zombies Co.ltd. All Right Reserved. </p>  

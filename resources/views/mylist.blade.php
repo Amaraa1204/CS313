@@ -49,16 +49,18 @@
     $photo = "http://localhost:8000/itemImages/".$post->photo."";
     $path = "'http://localhost:8000/b/".$post->id."'";
     echo '
-    <li>
-    <img src="'.$photo.'">
-    <div style="float: left; margin-left: 30px;">
-    <h2>Нэр:</h2>
-    <blockquote>'.$post->name.'</blockquote>
+
+    <div class="list">
+
+    <div class="list-info">
+      <h2>Нэр:</h2>
+      <p id="post-name">'.$post->name.'</p>
     </div>
+
+    <img style="width: 230px;" src="'.$photo.'">
     <button onclick="window.location.href='.$path.';"style="background-color: #BC69FD; margin-right: 30px; ">Дэлгэрэнгүй
     </button>
-
-    </li>';
+    </div>';
   }
 
 ?>  
